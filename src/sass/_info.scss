@@ -1,0 +1,119 @@
+.info {
+  position: relative;
+  width: 100%;
+  background-image: url("../assets/infoBg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #29251f;
+    opacity: 0.6;
+  }
+  &__wrapper {
+    position: relative;
+    z-index: 10;
+    padding: 5rem 10rem;
+    @media screen and (max-width: 1800px) {
+      padding: 5rem 4rem;
+    }
+    @include breakpoint-down(tab) {
+      padding: 5rem 2rem;
+    }
+    @include breakpoint-down(mobile) {
+      padding: 5rem 1rem;
+    }
+  }
+  &__heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #fff;
+      font-weight: 500;
+      line-height: 50px;
+      letter-spacing: 0.05em;
+      margin-bottom: 2rem;
+      font-family: "Great Vibes", sans-serif;
+      @include breakpoint-down(mobile) {
+        font-size: 2rem;
+      }
+    }
+    button {
+      border-radius: 5px;
+      padding: 0.8rem 2rem;
+      border: 2px solid #dfae67;
+      background: transparent;
+      font-size: 18px;
+      font-weight: 500;
+      color: #dfae67;
+      letter-spacing: 0.05em;
+      text-transform: capitalize;
+      font-family: "Josefin Sans", sans-serif;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background: #dfae67;
+        color: #fff;
+      }
+    }
+  }
+  &__date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 2rem;
+    @include breakpoint-down(mobile) {
+      flex-direction: column;
+    }
+    &-single {
+      flex-basis: 30%;
+      @include breakpoint-down(tab) {
+        flex-basis: 50%;
+      }
+      @include breakpoint-down(mobile) {
+        margin-block: 2rem;
+      }
+      text-align: center;
+      font-size: 24px;
+      line-height: 40px;
+    }
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    @include breakpoint-down(tab) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 4rem;
+    }
+    @include breakpoint-down(mobile) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 2rem;
+    }
+    &-single {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      h2 {
+        font-family: "Great Vibes", sans-serif;
+        font-size: 5rem;
+        color: #dfae67;
+        @include breakpoint-down(mobile) {
+          font-size: 4rem;
+        }
+      }
+      p {
+        font-size: 20px;
+        font-family: "Josefin Sans", sans-serif;
+      }
+    }
+  }
+}

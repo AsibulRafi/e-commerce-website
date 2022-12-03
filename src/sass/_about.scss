@@ -1,0 +1,113 @@
+.about {
+  padding: 0rem 0rem 5rem;
+  @include breakpoint-down(tab) {
+    padding: 0rem 2rem 5rem;
+  }
+  @include breakpoint-down(mobile) {
+    padding: 0rem 1rem 5rem;
+  }
+  &__heading {
+    text-align: center;
+    margin-bottom: 10rem;
+    @include breakpoint-down(tab) {
+      margin-bottom: 5rem;
+    }
+    h4 {
+      font-family: "Great Vibes", sans-serif;
+      font-weight: 400;
+      color: #dfae67;
+      letter-spacing: 0.05em;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      @include breakpoint-down(tab) {
+        font-size: 2rem;
+      }
+      @include breakpoint-down(mobile) {
+        font-size: 1.6rem;
+      }
+    }
+    h2 {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      @include breakpoint-down(tab) {
+        font-size: 2.5rem;
+      }
+      @include breakpoint-down(mobile) {
+        font-size: 1.9rem;
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    @include breakpoint-down(tab) {
+      flex-direction: column;
+    }
+    &-info {
+      padding: 0rem 8rem;
+      @include breakpoint-down(laptop) {
+        padding: 0rem 2rem;
+      }
+      @include breakpoint-down(tab) {
+        padding: 3rem 0rem;
+      }
+      h2 {
+        font-size: 30px;
+        font-weight: 500;
+        color: #fff;
+        margin-bottom: 2rem;
+        font-family: "Poppins", sans-serif;
+        @include breakpoint-down(mobile) {
+          font-size: 22px;
+        }
+      }
+      p {
+        font-family: "Poppins", sans-serif;
+        width: 500px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #bfbfbf;
+        line-height: 40px;
+        letter-spacing: 0.05em;
+        margin-bottom: 2rem;
+        @include breakpoint-down(mobile) {
+          width: 100%;
+          font-size: 14px;
+        }
+      }
+      h4 {
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+      &-social {
+        display: flex;
+        flex-direction: row;
+        a {
+          margin-inline: 1rem;
+          @include breakpoint-down(mobile) {
+            margin-inline: 0rem;
+            margin-right: 10px;
+          }
+          img {
+            @include breakpoint-down(mobile) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    &-img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

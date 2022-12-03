@@ -1,0 +1,217 @@
+.reservation {
+  padding: 8rem 20rem;
+  @media screen and (max-width: 1700px) {
+    padding: 8rem 3rem;
+  }
+  @include breakpoint-down(tab) {
+    padding: 5rem 2rem;
+  }
+  @include breakpoint-down(mobile) {
+    padding: 5rem 1rem;
+  }
+  &__heading {
+    text-align: center;
+    font-family: "Great Vibes", sans-serif;
+    font-weight: 400;
+    color: #dfae67;
+    letter-spacing: 0.07em;
+    font-size: 3rem;
+    margin-bottom: 5rem;
+    @include breakpoint-down(tab) {
+      font-size: 3rem;
+    }
+    @include breakpoint-down(mobile) {
+      font-size: 2.5rem;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    @include breakpoint-down(tab) {
+      flex-direction: column;
+    }
+    &-info {
+      flex-basis: 50%;
+      margin-right: 5rem;
+      @include breakpoint-down(tab) {
+        margin-right: 0rem;
+        margin-bottom: 5rem;
+      }
+      @include breakpoint-down(mobile) {
+        br {
+          display: none;
+        }
+      }
+      h3 {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 32px;
+        font-weight: 500;
+        color: #fff;
+        line-height: 40px;
+        margin-bottom: 2rem;
+        @include breakpoint-down(tab) {
+          font-size: 28px;
+          text-align: center;
+        }
+        @include breakpoint-down(mobile) {
+          font-size: 26px;
+        }
+      }
+      p {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 27px;
+        letter-spacing: 0.05em;
+        color: #c6c6c6;
+        @include breakpoint-down(tab) {
+          text-align: center;
+        }
+        @include breakpoint-down(mobile) {
+          font-size: 14px;
+        }
+      }
+    }
+    &-form {
+      position: relative;
+      flex-basis: 50%;
+      padding: 2rem;
+      background-image: url("../assets/formBg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 5px;
+      width: 100%;
+      @include breakpoint-down(mobile) {
+        padding: 10px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #29251f;
+        opacity: 0.5;
+      }
+      form {
+        position: relative;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        .name {
+          background-color: transparent;
+          border: 2px solid #dfae67;
+          outline: none;
+          font-size: 18px;
+          font-weight: 400;
+          font-family: "Poppins", sans-serif;
+          color: #fff;
+          padding: 10px 1rem;
+          border-radius: 5px;
+          margin-bottom: 1.5rem;
+          @include breakpoint-down(mobile) {
+            font-size: 14px;
+            padding: 8px 12px;
+          }
+          &::placeholder {
+            color: #fff;
+          }
+        }
+        select {
+          background-color: transparent;
+          border: 2px solid #dfae67;
+          outline: none;
+          font-size: 18px;
+          font-weight: 400;
+          font-family: "Poppins", sans-serif;
+          color: #fff;
+          padding: 10px 1rem;
+          border-radius: 5px;
+          margin-bottom: 1.5rem;
+          @include breakpoint-down(mobile) {
+            font-size: 14px;
+            padding: 8px 12px;
+          }
+          option {
+            background-color: #29251f;
+          }
+        }
+      }
+      &-flex {
+        display: flex;
+        flex-direction: row;
+        input[type="date"]::-webkit-calendar-picker-indicator {
+          cursor: pointer;
+          border-radius: 4px;
+          margin-right: 2px;
+          opacity: 0.6;
+          filter: invert(1);
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator:hover {
+          opacity: 1;
+        }
+        input[type="time"]::-webkit-calendar-picker-indicator {
+          cursor: pointer;
+          border-radius: 4px;
+          margin-right: 2px;
+          opacity: 0.6;
+          filter: invert(1);
+        }
+
+        input[type="time"]::-webkit-calendar-picker-indicator:hover {
+          opacity: 1;
+        }
+        input {
+          background-color: transparent;
+          border: 2px solid #dfae67;
+          outline: none;
+          font-size: 18px;
+          font-weight: 400;
+          width: 100%;
+          font-family: "Poppins", sans-serif;
+          color: #fff;
+          padding: 10px 1rem;
+          border-radius: 5px;
+          margin-bottom: 1.5rem;
+          @include breakpoint-down(mobile) {
+            font-size: 14px;
+            padding: 8px 12px;
+          }
+          &:first-child {
+            margin-right: 2rem;
+          }
+          &::placeholder {
+            color: #fff;
+          }
+        }
+      }
+      button {
+        width: 100%;
+        outline: none;
+        border-radius: 5px;
+        background-color: #dfae67;
+        border: 2px solid #dfae67;
+        color: #000;
+        font-size: 18px;
+        font-weight: 400;
+        font-family: "Poppins", sans-serif;
+        padding: 10px 1rem;
+        transition: all 0.3s ease-in-out;
+        @include breakpoint-down(mobile) {
+          font-size: 14px;
+          padding: 8px 12px;
+        }
+        &:hover {
+          background: transparent;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

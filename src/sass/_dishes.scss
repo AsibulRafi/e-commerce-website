@@ -1,0 +1,158 @@
+.dishes {
+  padding: 10rem 20rem;
+  @media screen and (max-width: 1700px) {
+    padding: 10rem 2rem;
+  }
+  @include breakpoint-down(tab) {
+    padding: 10rem 1rem;
+  }
+  @include breakpoint-down(mobile) {
+    padding: 8rem 1rem;
+  }
+  &__heading {
+    text-align: center;
+    margin-bottom: 5rem;
+    h4 {
+      font-family: "Great Vibes", sans-serif;
+      font-weight: 400;
+      color: #dfae67;
+      letter-spacing: 0.05em;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      @include breakpoint-down(tab) {
+        font-size: 2rem;
+      }
+      @include breakpoint-down(mobile) {
+        font-size: 1.6rem;
+      }
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      @include breakpoint-down(tab) {
+        font-size: 1.8rem;
+      }
+      @include breakpoint-down(mobile) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .rec {
+    .rec-arrow {
+      display: none;
+    }
+    .rec-pagination {
+      margin-top: 2rem;
+    }
+    .rec-dot {
+      width: 15px;
+      height: 15px;
+      box-shadow: 0px 0px 1px 3px #6e07f3;
+    }
+    .rec-dot_active {
+      width: 15px;
+      height: 15px;
+      background-color: #6e07f3;
+      box-shadow: 0px 0px 1px 3px #6e07f3;
+    }
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
+    &-card {
+      position: relative;
+      width: 100%;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        background-color: #dfae67;
+        opacity: 1;
+        position: absolute;
+        width: 100%;
+        height: 0;
+        transition: 0.4s ease-in-out;
+      }
+      &:hover {
+        &::before {
+          height: 100%;
+        }
+      }
+      &-info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 2rem;
+        width: 100%;
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+        h2 {
+          font-size: 2rem;
+          font-weight: 500;
+          font-family: "Great Vibes", sans-serif;
+          color: #000;
+          letter-spacing: 0.05em;
+          margin-bottom: 2rem;
+        }
+        ul {
+          margin-left: 2rem;
+          margin-bottom: 2rem;
+          li {
+            font-size: 1.2rem;
+            color: #000;
+            @include breakpoint-down(mobile) {
+              font-size: 1rem;
+            }
+            &::marker {
+              color: #000;
+              font-size: 2rem;
+            }
+            &:not(:last-child) {
+              margin-bottom: 1rem;
+            }
+          }
+        }
+        h1 {
+          position: absolute;
+          right: 1rem;
+          bottom: 0;
+          color: #000;
+          font-weight: 600;
+          font-size: 2rem;
+          @include breakpoint-down(tab) {
+            font-size: 1.8rem;
+          }
+          @include breakpoint-down(mobile) {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+    &-single {
+      width: 330px;
+      border-radius: 10px;
+      overflow: hidden;
+      &-name {
+        height: 100%;
+        width: 100%;
+        font-family: "Great Vibes", sans-serif;
+        font-weight: 400;
+        font-size: 2rem;
+        color: #dfae67;
+        margin-top: 2rem;
+        text-align: center;
+      }
+    }
+  }
+}
+.dishes__content-card:hover {
+  .dishes__content-card-info {
+    opacity: 1;
+    top: 50%;
+  }
+}
